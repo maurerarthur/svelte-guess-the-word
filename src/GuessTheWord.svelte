@@ -1,17 +1,11 @@
 <script>
-  const wordsLength = 5
+	import randomWords from 'random-words'
 
-  const words = [
-    'glass',
-    'mouse',
-    'stare',
-    'meter',
-    'drive'
-  ]
-
+	const exactly = 1
+	const words = randomWords({ exactly })
   const word = words[Math.floor(Math.random() * words.length)]
 
-  let userInput = Array(wordsLength)
+  let userInput = Array(words.toString().length)
 
   let isWordDiscovered = false
 
@@ -22,7 +16,7 @@
 
 <div class="background container-fluid">
   <div class="h-100 d-flex flex-column align-items-center justify-content-center">
-    <h3 class="mb-4">Wordle</h3>
+    <h3 class="mb-4">Guess the word!</h3>
     <div>
       {#each userInput as _, input}
         <input
@@ -33,7 +27,7 @@
       {/each}
     </div>
     {#if isWordDiscovered}
-      <p class="mt-4">That's right. The word is {word}</p>
+      <p class="mt-4">That's right. The word is {word}.</p>
     {/if}
   </div>
 </div>

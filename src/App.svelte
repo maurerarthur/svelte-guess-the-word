@@ -1,5 +1,5 @@
 <script>
-  import Wordle from './Wordle.svelte';
+  import Wordle from './GuessTheWord.svelte'
 </script>
 
 <div class="h-100 container-fluid">
