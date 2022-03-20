@@ -21,6 +21,7 @@
       {#each userInput as _, input}
         <input
           type="text"
+          maxlength="1"
           class={userInput[input] == word[input] ? "correct_letter" : ""}
           bind:value={userInput[input]}
         />
@@ -28,6 +29,12 @@
     </div>
     {#if isWordDiscovered}
       <p class="mt-4">That's right. The word is {word}.</p>
+      <button
+        on:click={() => window.location.reload()}
+        class="restart_game_button"
+      >
+        Play Again
+      </button>
     {/if}
   </div>
 </div>
@@ -36,6 +43,7 @@
   :root {
     --green: #ADC698;
   	--light-white: #D0E3C4;
+    --purple: #503047;
   }
 
   input {
@@ -66,5 +74,14 @@
 
   .correct_letter {
     background-color: var(--green);
+  }
+
+  .restart_game_button {
+    font-size: 30px;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--green);
+    color: var(--purple);
   }
 </style>
