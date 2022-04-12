@@ -14,6 +14,7 @@
     "vite": "^2.8.0"
   },
   "dependencies": {
+    "esbuild-darwin-64": "^0.14.36",
     "random-words": "^1.1.2"
   }
 }
